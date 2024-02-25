@@ -1,0 +1,14 @@
+@import "@font/nunito";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: monospace;
+}
+
+h1,
+h2 {
+  font-family: var(--fontFamily-nunito);
+}
