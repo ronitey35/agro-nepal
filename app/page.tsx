@@ -1,6 +1,7 @@
-import AboutUs from "@/components/AboutUs";
+import AboutUs from "@/components/aboutUs";
 import Category from "@/components/Category";
 import OurServices from "@/components/OurServices";
+import Product from "@/components/Product";
 import Image from "next/image";
 
 export default function Home() {
@@ -34,6 +35,7 @@ export default function Home() {
       <OurServices />
       {/* about us */}
       <AboutUs />
+      <Product />
     </main>
   );
 }

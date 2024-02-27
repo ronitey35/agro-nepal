@@ -4,3 +4,9 @@ export interface Icardprops {
   desc?: string;
   price?: number;
 }
+
+export interface Iproducts {
+  data: [];
+  isLoading: boolean;
+  isPending: boolean;
+}
