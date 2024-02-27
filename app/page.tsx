@@ -1,14 +1,13 @@
-import AboutUs from "@/components/aboutUs";
-import Category from "@/components/Category";
-import OurServices from "@/components/OurServices";
-import Product from "@/components/Product";
-import Image from "next/image";
+import { aboutUs } from '@/components/home/about-us';
+import Category from '@/components/home/category';
+import OurServices from '@/components/home/our-services';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <main>
-      <div className="flex bg-lime-300  ml-4 mr-4 mt-2 mb-2 rounded-[20px] justify-between max-h-[500px] ">
-        <div className="flex flex-col gap-6 m-28 ml-48 font-extrabold  ">
+      <div className="mb-2 ml-4  mr-4 mt-2 flex max-h-[500px] justify-between rounded-[20px] bg-lime-300 ">
+        <div className="m-28 ml-48 flex flex-col gap-6 font-extrabold  ">
           <pre className="text-6xl">Order your</pre>
           <pre className="text-5xl">Daily Groceries</pre>
           <pre className="text-4xl">free Delivery</pre>
@@ -18,14 +17,14 @@ export default function Home() {
         </div>
       </div>
       <div className="flex items-center justify-center text-3xl">
-        <span className="border-t border-gray-400 w-1/4 mr-5"></span>
-        <span className="inline-block px-4 py-2 bg-white relative z-10">
+        <span className="mr-5 w-1/4 border-t border-gray-400"></span>
+        <span className="relative z-10 inline-block bg-white px-4 py-2">
           Categories
         </span>
-        <span className="border-t border-gray-400 w-1/4 ml-5"></span>
+        <span className="ml-5 w-1/4 border-t border-gray-400"></span>
       </div>
       {/* Category cards */}
-      <div className="flex flex-row justify-between m-4">
+      <div className="m-4 flex flex-row justify-between">
         <Category title="vegetable" />
         <Category title="fruits" />
         <Category title="Honey" />
@@ -33,9 +32,7 @@ export default function Home() {
       </div>
       {/* ourservices */}
       <OurServices />
-      {/* about us */}
-      <AboutUs />
-      <Product />
+      {aboutUs}
     </main>
   );
 }
