@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Navbar, Footer } from '@/components/Index';
+import { Navbar, Footer, Cart } from '@/components/Index';
 import QueryProvider from '../providers/query-provider';
+import { ShoppingCartProvider } from '@/providers/shoppingCart-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,11 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative">
-        <QueryProvider>
-          <Navbar />
-          {children}
-          <Footer />
-        </QueryProvider>
+        <ShoppingCartProvider>
+          <QueryProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </QueryProvider>
+        </ShoppingCartProvider>
       </body>
     </html>
   );

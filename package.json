@@ -10,14 +10,19 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
     "@font/nunito": "^1.0.3",
+    "@headlessui/react": "^1.7.18",
     "@material-tailwind/react": "^2.1.9",
+    "@mui/material": "^5.15.11",
     "@tanstack/react-query": "^5.24.1",
     "@tanstack/react-query-devtools": "^5.24.1",
     "next": "14.1.0",
     "react": "^18",
     "react-axios": "^2.0.6",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

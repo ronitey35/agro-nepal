@@ -1,6 +1,11 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
+import { Cart } from '../Index';
+import { FaOpencart, FaShoppingCart } from 'react-icons/fa';
+import { useShoppingCart } from '@/providers/shoppingCart-provider';
 
 const Navbar = () => {
+  const { openCart, isOpen, cartQuantity } = useShoppingCart();
   return (
     <div className="  ml-4 mr-4 mt-2 flex min-h-[60px] min-w-10 items-center  justify-between gap-6 rounded-[20px] p-4 ">
       <div className="image-logo flex items-center gap-5 text-2xl  font-bold">
@@ -17,12 +22,22 @@ const Navbar = () => {
         </ol>
       </div>
       <div className="flex items-center gap-5 text-2xl font-bold ">
-        <h1 className="flex h-9 w-24 cursor-pointer items-center justify-center rounded-xl bg-inherit hover:bg-white ">
+        <h1 className="flex h-9 w-24 cursor-pointer items-center justify-center rounded-lg bg-inherit hover:bg-white ">
           SignUp
         </h1>
-        <h1 className=" flex h-9 w-24 cursor-pointer items-center justify-center  rounded-xl bg-lime-300  hover:border-[1px]">
+        <h1 className=" flex h-9 w-24 cursor-pointer items-center justify-center  rounded-lg bg-lime-300  hover:border-[1px]">
           Login
         </h1>
+      </div>
+      <div>
+        {isOpen ? (
+          <Cart />
+        ) : (
+          <button onClick={openCart} className="relative">
+            <FaShoppingCart size={40} />
+            <span className=" absolute">2</span>
+          </button>
+        )}
       </div>
     </div>
   );
