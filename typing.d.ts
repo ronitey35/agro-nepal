@@ -38,5 +38,5 @@ interface CartItem {
   title: string;
   name: string;
   price: number;
-  image: string;
+  image: string | null | undefined;
 }

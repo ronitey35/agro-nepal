@@ -27,7 +27,16 @@ export default function page({ params }: Props, { addToCart }: cartProps) {
                 <div className="w-1/2 px-2">
                   {product && (
                     <button
-                      onClick={() => increaseCartQuantity(product.id)}
+                      onClick={() =>
+                        increaseCartQuantity({
+                          id: product.id,
+                          name: product.title,
+                          image: product.image,
+                          price: product.price,
+                          quantity: 1,
+                          title: product.title
+                        })
+                      }
                       className="w-full rounded-full bg-gray-900 px-4 py-2 font-bold text-white hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-700"
                     >
                       Add to Cart
