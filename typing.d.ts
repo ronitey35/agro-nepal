@@ -33,10 +33,10 @@ type cartProps = {
 };
 
 interface CartItem {
-  id: string;
+  id?: string;
   quantity: number;
-  title: string;
-  name: string;
-  price: number;
-  image: string | null | undefined;
+  title?: string;
+  name?: string;
+  price?: number;
+  image?: string | null | undefined;
 }

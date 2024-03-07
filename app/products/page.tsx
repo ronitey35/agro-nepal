@@ -29,7 +29,13 @@ export default function Page({ searchParams }: Props) {
           <p className="line-clamp-3 text-sm text-gray-500">
             {item.description}
           </p>
-          <Link href={`/product/${item.id}`}> Click Me</Link>
+          <Link
+            className=" rounded-xl p-1 text-xl font-bold hover:bg-blue-300"
+            href={`/product/${item.id}`}
+          >
+            {' '}
+            More Details{' '}
+          </Link>
         </div>
       ))}
     </div>

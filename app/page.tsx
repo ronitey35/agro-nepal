@@ -25,7 +25,7 @@ export default function Home() {
       </div>
       {/* Category cards */}
       <div className="m-4 flex flex-row justify-between">
-        <Category title="vegetable" />
+        <Category title="vegetables" />
         <Category title="fruits" />
         <Category title="Honey" />
         <Category title="Meat" />

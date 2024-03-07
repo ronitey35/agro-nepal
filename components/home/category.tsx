@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 interface Icardprops {
   title: string;
   image?: string;
@@ -18,7 +20,9 @@ const Category = ({ title }: Icardprops) => {
           Best Things you will Ever have in your entire life
         </p>
       </div>
-      <button className=" ml-14">Click Here to Explore</button>
+      <Link href={`/products?category=${title}`} className=" ml-14">
+        Click Here to Explore
+      </Link>
     </div>
   );
 };
