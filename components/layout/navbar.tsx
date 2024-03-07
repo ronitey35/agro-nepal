@@ -1,8 +1,7 @@
 'use client';
-import React, { useState } from 'react';
-import { Cart } from '../Index';
-import { FaOpencart, FaShoppingCart } from 'react-icons/fa';
 import { useShoppingCart } from '@/providers/shoppingCart-provider';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { Cart } from '../Index';
 
 const Navbar = () => {
   const { openCart, isOpen, cartQuantity } = useShoppingCart();
@@ -12,7 +11,6 @@ const Navbar = () => {
         <h2 className="text-2xl">LOGO</h2>
         <h1>AgroNepal</h1>
       </div>
-
       <div className="list flex ">
         <ol className="flex items-center gap-16 text-2xl font-bold ">
           <li className="cursor-pointer ">Home</li>
@@ -34,8 +32,12 @@ const Navbar = () => {
           <Cart />
         ) : (
           <button onClick={openCart} className="relative">
-            <FaShoppingCart size={40} />
-            <span className=" absolute">2</span>
+            <AiOutlineShoppingCart size={40} />
+            {cartQuantity > 0 && (
+              <span className=" absolute right-0 top-0 rounded-full bg-red-500 px-2 py-1 text-[8px]  text-white">
+                {cartQuantity}
+              </span>
+            )}
           </button>
         )}
       </div>

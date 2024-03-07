@@ -1,5 +1,4 @@
 'use client';
-import Product from '@/components/Product';
 import { useProduct } from '@/hook/queries/useProduct';
 import { useShoppingCart } from '@/providers/shoppingCart-provider';
 
