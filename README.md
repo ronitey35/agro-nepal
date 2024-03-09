@@ -5,3 +5,4 @@ Agro Nepal version-2
 -Verified Tag
 -Map System
 -filter system
+-Phone OTP
