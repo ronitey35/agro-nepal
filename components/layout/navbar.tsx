@@ -6,7 +6,7 @@ import { Cart } from '../Index';
 const Navbar = () => {
   const { openCart, isOpen, cartQuantity } = useShoppingCart();
   return (
-    <div className="  ml-4 mr-4 mt-2 flex min-h-[60px] min-w-10 items-center  justify-between gap-6 rounded-[20px] p-4 ">
+    <div className=" dark: mb-3 ml-4 mr-4 mt-2 flex min-h-[60px] min-w-10 items-center  justify-between gap-6 rounded-[20px]  p-4 dark:bg-gray-800 dark:text-white ">
       <div className="image-logo flex items-center gap-5 text-2xl  font-bold">
         <h1 className="font-mono">AgroNepal</h1>
       </div>

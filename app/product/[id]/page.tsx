@@ -26,7 +26,7 @@ export default function page({ params }: Props) {
               <button
                 onClick={() => {
                   increaseCartQuantity({
-                    id: product?.id,
+                    id: product?.id!,
                     quantity: 1,
                     image: product?.image,
                     price: product?.price
