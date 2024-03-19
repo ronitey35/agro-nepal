@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="relative">
+      <body className={`relative ${inter.className}`}>
         <ShoppingCartProvider>
           <QueryProvider>
             <Navbar />

@@ -10,6 +10,8 @@ export const useProfile = () => {
 };
 
 export const fetchProfile = async (): Promise<User> => {
-  const { data } = await axios.get(`${backend_url}/api/profile`);
+  const { data } = await axios.get(`${backend_url}/api/profile`, {
+    withCredentials: true
+  });
   return data.user;
 };
