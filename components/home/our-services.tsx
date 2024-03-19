@@ -5,7 +5,6 @@ const OurServices = () => {
     <div>
       <section
         id="features"
-        rounded-2xl
         className="relative m-4 block min-w-[500px] rounded-2xl border-b border-t border-lime-300 bg-lime-300  px-6 py-10 md:px-10 md:py-20"
       >
         <div className="relative mx-auto max-w-5xl text-center">

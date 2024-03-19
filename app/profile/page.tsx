@@ -1,6 +1,7 @@
 'use client';
 
 import { useProfile } from '@/hook/queries/useProfile';
+import { backend_url } from '@/lib/constants';
 import React, { useState } from 'react';
 import {
   FaGooglePlusG,
@@ -71,18 +72,18 @@ const Profile: React.FC = () => {
           <div className="mt-4 flex items-center justify-between">
             <span className="w-1/5 border-b lg:w-1/5 dark:border-gray-600"></span>
 
-            <a
-              href="#"
-              className="text-center text-xs uppercase text-gray-500 hover:underline dark:text-gray-400"
-            >
+            <button className="text-center text-xs uppercase text-gray-500 hover:underline dark:text-gray-400">
               or login with Social Media
-            </a>
+            </button>
 
             <span className="w-1/5 border-b lg:w-1/5 dark:border-gray-400"></span>
           </div>
 
           <div className="-mx-2 mt-6 flex items-center">
             <button
+              onClick={() =>
+                window.open(`${backend_url}/api/login/google`, '_self')
+              }
               type="button"
               className="mx-2 flex w-full transform items-center justify-center rounded-lg bg-blue-500 px-6 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-blue-400 focus:bg-blue-400 focus:outline-none"
             >

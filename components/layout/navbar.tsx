@@ -2,6 +2,7 @@
 import { useShoppingCart } from '@/providers/shoppingCart-provider';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Cart } from '../Index';
+import { backend_url } from '@/lib/constants';
 
 const Navbar = () => {
   const { openCart, isOpen, cartQuantity } = useShoppingCart();
@@ -19,12 +20,14 @@ const Navbar = () => {
         </ol>
       </div>
       <div className="flex  items-center gap-2 text-2xl font-bold ">
-        <h1 className="h-9 cursor-pointer items-center justify-center rounded-lg bg-inherit font-mono hover:bg-white ">
-          SignUp
-        </h1>
-        <h1 className=" h-9 cursor-pointer items-center  justify-center rounded-lg bg-lime-300 px-2  font-mono  hover:border-[1px]">
-          Login
-        </h1>
+        <button
+          onClick={() =>
+            window.open(`${backend_url}/api/login/google`, '_self')
+          }
+          className=" h-9 cursor-pointer items-center  justify-center rounded-lg bg-lime-300 px-2  font-mono  hover:border-[1px]"
+        >
+          Get started
+        </button>
       </div>
       <div>
         {isOpen ? (
