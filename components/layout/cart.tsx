@@ -13,7 +13,7 @@ const Cart = () => {
   return (
     <div className="fixed inset-y-0 right-0 w-80 bg-white p-4 shadow-lg">
       <div className="flex items-center justify-between">
-        <h1 className=" m-3  text-xl font-semibold"> Cart</h1>
+        <h1 className=" m-3 text-xl font-semibold text-black">Cart</h1>
         <button className=" text-2xl font-bold" onClick={closeCart}>
           X
         </button>

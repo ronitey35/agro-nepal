@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 
 interface Icardprops {
@@ -6,24 +7,25 @@ interface Icardprops {
   desc?: string;
   price?: number;
 }
+
 const Category = ({ title }: Icardprops) => {
   return (
-    <div className="relative max-w-sm overflow-hidden rounded-[20px] border-[3px] bg-lime-200 shadow-lg ">
+    <Link
+      href={`/products?category=${title}`}
+      className="relative rounded-lg border-2 bg-white shadow-lg transition-all duration-200 ease-in hover:scale-[1.05]"
+    >
       <img
-        className="w-full"
+        className="h-40 w-full object-cover object-center"
         src="/vegetables.jpg"
-        alt="Sunset in the mountains"
+        alt="Vegetables"
       />
       <div className="px-6 py-4">
-        <div className="mb-2 text-xl font-bold">{title}</div>
+        <div className="mb-2 text-xl font-bold text-gray-800">{title}</div>
         <p className="text-base text-gray-700">
-          Best Things you will Ever have in your entire life
+          Discover the finest selection of {title.toLowerCase()}.
         </p>
       </div>
-      <Link href={`/products?category=${title}`} className=" ml-14">
-        Click Here to Explore
-      </Link>
-    </div>
+    </Link>
   );
 };
 

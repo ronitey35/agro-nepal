@@ -4,6 +4,7 @@ import './globals.css';
 import { Navbar, Footer, Cart } from '@/components/Index';
 import QueryProvider from '../providers/query-provider';
 import { ShoppingCartProvider } from '@/providers/shoppingCart-provider';
+import { ChakraProvider } from '@chakra-ui/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,12 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`relative ${inter.className}`}>
+      <body
+        className={`relative ${inter.className} flex min-h-screen flex-col bg-white `}
+      >
         <ShoppingCartProvider>
           <QueryProvider>
-            <Navbar />
-            {children}
-            <Footer />
+            <ChakraProvider>
+              <Navbar />
+              <div className="flex-grow">{children}</div>
+              <Footer />
+            </ChakraProvider>
           </QueryProvider>
         </ShoppingCartProvider>
       </body>
