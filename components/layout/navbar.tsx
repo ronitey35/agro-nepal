@@ -15,11 +15,19 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useProfile } from '@/hook/queries/useProfile';
 
 const Navbar = () => {
   const { openCart, isOpen, cartQuantity } = useShoppingCart();
-  const isAdmin = false;
-  const islogged = false;
+  const { data } = useProfile();
+  const pathName = usePathname();
+  if (pathName == '/profile') return null;
+  if (pathName.startsWith("/admin")) return null;
+  
+  console.log(data);
+  // if (!islogged && pathName == '/profile') return null;
+
   return (
     <div className="  mb-3 ml-4 mr-4 mt-2 flex min-h-[60px] min-w-10 items-center justify-between gap-6  rounded-[20px] bg-white pb-5 pt-5   text-black  ">
       <div className=" image-logo ml-2 flex items-center gap-5 text-2xl font-bold">
@@ -66,11 +74,11 @@ const Navbar = () => {
         </div>
 
         <div className=" ">
-          {islogged ? (
+          {data?.isGoogleUser ? (
             !isOpen && (
               <Popover placement="bottom-end" isLazy>
                 <PopoverTrigger>
-                  <Avatar name="Dan Abrahmov" src="/luffy.jpg" />
+                  <Avatar name="Dan Abrahmov" src={data.image} />
                 </PopoverTrigger>
                 <PopoverContent
                   className="bg-gray-100 text-black "
@@ -78,19 +86,19 @@ const Navbar = () => {
                 >
                   <PopoverCloseButton />
                   <PopoverBody className="rounded-md hover:bg-gray-400">
-                    Profile
+                    <Link href="/userprofile">Profile</Link>
                   </PopoverBody>
                   <PopoverBody className=" rounded-md hover:bg-gray-400">
                     Setting
                   </PopoverBody>
 
-                  {isAdmin ? (
+                  {data.role == 'admin' ? (
                     <PopoverBody className="rounded-md hover:bg-gray-400">
-                      Admin panel
+                      <Link href="/panel/admin"> Admin panel</Link>
                     </PopoverBody>
                   ) : (
                     <PopoverBody className="rounded-md hover:bg-gray-400">
-                      User panel
+                      <Link href="/panel/user/">User panel</Link>
                     </PopoverBody>
                   )}
                   <PopoverBody className="rounded-md hover:bg-gray-400">

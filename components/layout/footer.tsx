@@ -1,6 +1,13 @@
+'use client';
+import { usePathname } from 'next/navigation';
+import path from 'path';
 import React from 'react';
 
 const Footer = () => {
+  const pathName = usePathname();
+  if (pathName == '/profile') return null;
+  if (pathName.startsWith('/admin')) return null;
+
   return (
     <footer className="m-4 rounded-3xl bg-gradient-to-br from-green-400 to-blue-400 font-sans">
       <div className="container mx-auto px-6 py-12">
