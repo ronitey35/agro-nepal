@@ -20,6 +20,7 @@ type Options = {
   query: Record<string, string>;
   page: string | number | undefined;
 };
+
 const fetchProducts = async ({ query, page }: Options): Promise<Product[]> => {
   const urlSearchParams = new URLSearchParams(query);
   urlSearchParams.set('page', page?.toString() || '');

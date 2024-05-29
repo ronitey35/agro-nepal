@@ -12,4 +12,5 @@ export const useProduct = (id: string) => {
 export const fetchProduct = async (id: string): Promise<Product> => {
   const { data } = await axios.get(`${backend_url}/api/product/${id}`);
   return data.product;
+  id;
 };

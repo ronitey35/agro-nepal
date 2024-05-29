@@ -3,6 +3,7 @@
 import { useProfile } from '@/hook/queries/useProfile';
 import { backend_url } from '@/lib/constants';
 import { RedirectStatusCode } from 'next/dist/client/components/redirect-status-code';
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import React, { useState } from 'react';
 
@@ -10,7 +11,6 @@ import { FaGoogle } from 'react-icons/fa';
 
 const Profile: React.FC = () => {
   const [isnew, setIsNew] = useState(false);
-
 
   const { data, isLoading } = useProfile();
   console.log(data);
@@ -84,10 +84,8 @@ const Profile: React.FC = () => {
 
             <hr className="my-6 w-full border-gray-300" />
 
-            <button
-              onClick={() =>
-                window.open(`${backend_url}/api/login/google`, '_self')
-              }
+            <Link
+              href={`${backend_url}/api/login/google`}
               type="button"
               className="block w-full rounded-lg border border-gray-300 bg-white px-4 py-3 font-semibold text-gray-900 hover:bg-gray-100 focus:bg-gray-100"
             >
@@ -95,7 +93,7 @@ const Profile: React.FC = () => {
                 <FaGoogle size={20} color="blue" />
                 <span className="ml-4">Log in with Google</span>
               </div>
-            </button>
+            </Link>
 
             <p className="mt-8">
               Need an account?{' '}

@@ -1,5 +1,6 @@
 'use client';
 import { useProducts } from '@/hook/queries/useProducts';
+import Spinner from '@/lib/Spinner';
 import Link from 'next/link';
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
 export default function Page({ searchParams }: Props) {
   const { isLoading, data } = useProducts(searchParams);
   const products = data?.pages.flat(1) || [];
-  if (isLoading) return 'loading...';
+  if (isLoading) return <Spinner />;
   return (
     <div className="grid grid-cols-3 gap-4 ">
       {products.map((item) => (
@@ -19,11 +20,11 @@ export default function Page({ searchParams }: Props) {
         >
           <div className="text-center">
             <img
-              src={item.owner.image}
-              className="max-h-auto mx-auto block max-h-24"
+              src={item.owner.image || '/noAvatar.png'}
+              className="max-h-auto mx-auto block max-h-24 rounded-2xl"
               alt="image"
             />
-            <h1>{item.owner.name}</h1>
+            <h1 className="p-2">{item.owner.name}</h1>
           </div>
           <h4 className="my-3 text-xl font-semibold">{item.title}</h4>
           <p className="line-clamp-3 text-sm text-gray-500">

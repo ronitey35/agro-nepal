@@ -1,5 +1,6 @@
 'use client';
 import { useProduct } from '@/hook/queries/useProduct';
+import Spinner from '@/lib/Spinner';
 import { useShoppingCart } from '@/providers/shoppingCart-provider';
 
 type Props = {
@@ -7,9 +8,10 @@ type Props = {
 };
 
 export default function page({ params }: Props) {
-  const { data: product } = useProduct(params.id);
+  const { data: product, isLoading } = useProduct(params.id);
   const { increaseCartQuantity } = useShoppingCart();
 
+  if (isLoading) return <Spinner />;
   return (
     <div className="bg-gray-100 dark:bg-gray-800">
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">

@@ -23,8 +23,8 @@ const Navbar = () => {
   const { data } = useProfile();
   const pathName = usePathname();
   if (pathName == '/profile') return null;
-  if (pathName.startsWith("/admin")) return null;
-  
+  if (pathName.startsWith('/admin')) return null;
+
   console.log(data);
   // if (!islogged && pathName == '/profile') return null;
 
