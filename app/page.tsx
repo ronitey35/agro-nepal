@@ -2,7 +2,6 @@ import React from 'react';
 import { aboutUs } from '@/components/home/about-us';
 import Category from '@/components/home/category';
 import OurServices from '@/components/home/our-services';
-import { Img } from '@chakra-ui/react';
 
 export default function Home() {
   return (
@@ -18,10 +17,10 @@ export default function Home() {
         </div>
         {/* Image Section */}
         <div className="relative h-[500px] md:w-1/2">
-          <Img
+          <img
             src="/agro.png"
-            objectFit="cover"
-            className="rounded-r-lg"
+          
+            className="rounded-r-lg object-cover"
             alt="Image"
           />
         </div>

@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { useShoppingCart } from '@/providers/shoppingCart-provider';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Cart } from '../Index';
@@ -27,9 +27,11 @@ const Navbar = () => {
 
   console.log(data);
   // if (!islogged && pathName == '/profile') return null;
-
+  const [showBanner, setShowBanner] = useState(true);
   return (
+    
     <div className="  mb-3 ml-4 mr-4 mt-2 flex min-h-[60px] min-w-10 items-center justify-between gap-6  rounded-[20px] bg-white pb-5 pt-5   text-black  ">
+       
       <div className=" image-logo ml-2 flex items-center gap-5 text-2xl font-bold">
         <Link href="/" className=" font-serif text-3xl text-blue-800">
           <span>AgroNepal</span>

@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -18,6 +19,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body
@@ -26,6 +28,11 @@ export default function RootLayout({
         <ShoppingCartProvider>
           <QueryProvider>
             <ChakraProvider>
+            
+        <div className="bg-yellow-500 text-black text-center p-2 font-bold text-sm">
+          🚧 This site is currently under development. 🚧
+        
+        </div>
               <Navbar />
               <div className="flex-grow">{children}</div>
               <Footer />
